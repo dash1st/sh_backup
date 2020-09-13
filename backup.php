@@ -2,13 +2,13 @@
 <?php
 $backup_day = 7;
 
-// ¿ÀÇÂÇÒ µð·ºÅä¸® ÆÐ½º 
+// ì˜¤í”ˆí•  ë””ë ‰í† ë¦¬ íŒ¨ìŠ¤ 
 $dir_path = "/wecan2/llsunll/BACKUP";
 
-// µð·ºÅä¸®¸¦ ¿¬´Ù. 
+// ë””ë ‰í† ë¦¬ë¥¼ ì—°ë‹¤. 
 $dir_handle = opendir($dir_path);
 
-// ÀüÃ¼ µð·ºÅä¸® ³»¿ëÀ» Ãâ·ÂÇÑ´Ù. 
+// ì „ì²´ ë””ë ‰í† ë¦¬ ë‚´ìš©ì„ ì¶œë ¥í•œë‹¤. 
 while($tmp = readdir($dir_handle))
 {
         if(!is_dir($dir_path.$tmp))
@@ -36,11 +36,11 @@ while($tmp = readdir($dir_handle))
                 }
         }
 }
-// ¹é¾÷
+// ë°±ì—…
 chdir("/wecan2/llsunll");
 $cmd = "tar cvfpz BACKUP/blog-".date("Ymd").".tar.gz hurk.dash1st.net/";
 exec($cmd);
-$cmd = "mysqldump -u llsunll -p'38317' user_llsunll > BACKUP/blog-".date("Ymd").".sql";
+$cmd = "mysqldump -u llsunll -p'PASSWORD' user_llsunll > BACKUP/blog-".date("Ymd").".sql";
 exec($cmd);
 $cmd = "chown llsunll.llsunll BACKUP/*";
 exec($cmd);
