@@ -2,16 +2,16 @@
 
 TAR=/bin/tar
 
-#¿À´Ã ³¯Â¥ ±¸ÇÏ±â
+#ì˜¤ëŠ˜ ë‚ ì§œ êµ¬í•˜ê¸°
 today=`date +%Y%m%d`
 
-#¹é¾÷ÇÒ µ¥ÀÌÅÍ 
+#ë°±ì—…í•  ë°ì´í„° 
 backup_data='hurk.dash1st.net'
 
-#¹é¾÷µÉ Àå¼Ò
+#ë°±ì—…ë  ìž¥ì†Œ
 backup_dir='BACKUP'
 
 $TAR cfpz $backup_dir/$today.tar.gz $backup_data 
 
-mysqldump -u llsunll -p'38317' user_llsunll > ./BACKUP/DB_llsunll.sql
+mysqldump -u llsunll -p'PSSSWORD' user_llsunll > ./BACKUP/DB_llsunll.sql
 
